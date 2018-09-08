@@ -9,12 +9,18 @@
   <body>
 
     <div id="vue-app">
-      <h1>{{greet("Night")}}</h1>
-        <p>{{name}}</p>
-        <p>{{job}}</p>
-        <a v-bind:href="website">The NET NINJA</a>
-        <input type="text"  v-bind:value="name">
-        <p v-html="websiteTag"></p>
+      <h1>Events Handling</h1>
+      <button v-on:click="add(1)">Add a Year</button>
+      <button v-on:click="subtract(1)">Subtract a Year</button>
+
+      <button v-on:dblclick="add(3)">Add a Year</button>
+      <button v-on:dblclick="subtract(3)">Subtract a Year</button>
+
+      <p>My age is {{age}}</p>
+
+      <div id="canvas" v-on:mousemove="updateXY">
+        {{x}}, {{y}}
+      </div>
     </div>
 
     <script src="app.js"></script>
