@@ -9,28 +9,18 @@
 </head>
 
 <body>
-  <div id="vue-app">
+  <div id="vue-app-one">
+    <h2>{{title}}</h2>
+    <p>{{greet}}</p>
+  </div>
 
-    <!-- bag image -->
-    <div id="bag" v-bind:class="{burst: ended}">
-
-    </div>
-
-    <!-- bag health -->
-    <div id="bag-health">
-      <div v-bind:style="{ width: health+'%'}">
-
-      </div>
-    </div>
-
-    <!-- game controls -->
-    <div id="controls">
-      <button v-on:click="punch" v-show="!ended">Punch</button>
-      <button v-on:click="restart">Restart</button>
-
-    </div>
+  <div id="vue-app-two">
+    <h2>{{title}}</h2>
+    <p>{{greet}}</p>
+    <button v-on:click="changeTitle">Change Title</button>
 
   </div>
+
   <script src="app.js"></script>
 </body>
 
