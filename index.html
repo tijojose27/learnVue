@@ -12,15 +12,22 @@
 
   <div id="vue-app">
 
-    <h1>Conditionals</h1>
+    <h1>Looping list</h1>
 
-    <button v-on:click="error=!error">Error</button>
-    <button v-on:click="sucess= !sucess">Sucess</button>
-    <!-- <p v-if="error">Error is shown</p>
-    <p v-if="sucess">Success is shown</p> -->
+    <!-- <ul>
+      <li v-for="character in characters">{{character}}</li>
+    </ul>
 
-  <p v-show="error">Error</p>
-  <p v-show="sucess">Success</p>
+    <ul>
+      <li v-for="(ninja, index) in marvel">{{index}}{{ninja.name}} - {{ninja.age}}</li>
+    </ul> -->
+
+    <template v-for="ninja in marvel">
+      <div v-for="(val, key) in ninja">
+        <p>{{key}} - {{val}}</p>
+      </div>
+    </template>
+
   </div>
 
   <script src="app.js"></script>
