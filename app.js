@@ -1,20 +1,20 @@
 new Vue({
   el: "#vue-app",
   data: {
-    characters:['Batman', 'Superman', 'Aquaman'],
-    marvel:[
-      {name: 'Ironman', age:25},
-      {name: 'Captian', age:99},
-      {name: 'Thor', age:75},
-    ]
+    health:100,
+    ended: false
   },
   methods: {
-    // addtoA:function () {
-    //   return this.a+this.age;
-    // },
-    // addtoB:function () {
-    //   return this.b+this.age;
-    // }
+    punch:function () {
+      this.health -=10;
+      if(this.health<=0){
+        this.ended=true;
+      }
+    },
+    restart: function () {
+      this.health=100;
+      this.ended=false;
+    }
   },
   computed: {
 

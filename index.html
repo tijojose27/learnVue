@@ -9,27 +9,28 @@
 </head>
 
 <body>
-
   <div id="vue-app">
 
-    <h1>Looping list</h1>
+    <!-- bag image -->
+    <div id="bag" v-bind:class="{burst: ended}">
 
-    <!-- <ul>
-      <li v-for="character in characters">{{character}}</li>
-    </ul>
+    </div>
 
-    <ul>
-      <li v-for="(ninja, index) in marvel">{{index}}{{ninja.name}} - {{ninja.age}}</li>
-    </ul> -->
+    <!-- bag health -->
+    <div id="bag-health">
+      <div v-bind:style="{ width: health+'%'}">
 
-    <template v-for="ninja in marvel">
-      <div v-for="(val, key) in ninja">
-        <p>{{key}} - {{val}}</p>
       </div>
-    </template>
+    </div>
+
+    <!-- game controls -->
+    <div id="controls">
+      <button v-on:click="punch" v-show="!ended">Punch</button>
+      <button v-on:click="restart">Restart</button>
+
+    </div>
 
   </div>
-
   <script src="app.js"></script>
 </body>
 
